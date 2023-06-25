@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Sujet</h4>
+    <p>
+        Ecrire une application qui parcours les entiers de 1 à 50 et qui affiche un carré de couleur
+        verte, si le nombre est divisible par 3, un carré de couleur bleu, si le nombre est divisible par
+        5 ou un carré de couleur jaune si le nombre est divisible par 3 et 5.
+    </p>
+</div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="squares-container">
+                    <div class="row" >
+                @foreach (var squareColor in ViewData["Squares"] as List<string>)
+                    {
+                        if (!string.IsNullOrEmpty(squareColor))
+                        {
+                                <div class="col-3 mb-3">
+                                    <div class="card-deck">
+                                        <div class="card" style=" background-color: @squareColor;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Color : @squareColor</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        }
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
